@@ -1,5 +1,6 @@
 public abstract class Money {
   protected int amount;
+  protected String currency;
 
   public boolean equals(Object object) {
     Money money = (Money) object;
@@ -14,7 +15,9 @@ public abstract class Money {
     return new Franc(amount);
   }
 
-  abstract Money times(int multiplier);
+  String currency() {
+    return currency;
+  }
 
-  abstract String currency();
+  abstract Money times(int multiplier);
 }
